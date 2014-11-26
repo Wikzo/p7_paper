@@ -69,13 +69,16 @@ A slider that could be used to interpolate between two camera framings in a prev
 It was found that the students are comfortable working in Maya and use it as their main reference point when working in 3D applications. The overall design of the camera tool should take this into considerations to make the transition from Maya to Unity as smooth as possible.
 
 Some of the more concrete findings include:
+
+\vspace{-5mm}
 \begin{itemize}
+\setlength\itemsep{0em}
 \item Basic camera manipulation: translation, rotation, field of view, lenses, easing, etc.
 \item Camera modes
 \begin{itemize}
 \item Look through the camera when positioning it
-\item Aim point
-\item Domains areas
+\item Setup the position of the camera by making it aim at a 3D point in space
+\item Change \textit{Camera Settings} or behaviour when player enters a Domain areas (trigger zone)
 \item Toggle camera to either follow or be static
 \end{itemize}
 \item Curves and graph editors
@@ -93,9 +96,18 @@ Some of the more concrete findings include:
 \end{itemize}
 
 \subsection{Design and Implementation}
-After completing the two exercises, we started developing a rough prototype in Unity (see Figure \ref{fig:prototype}). This iteration included basic functionality to make it possible to test and get feedback as quickly as possible. When discussing the tool, it was found necessary to define some terms. The camera system has to work with an existing path system that uses \textit{path nodes}. The camera system consists of two main objects, namely \textit{influence points} and \textit{camera settings} (or simply just \textit{cameras}). Together, these are called \textit{framings} and are what the artist is going to place Figure \ref{fig:manual_overview} shows a simple illustration of this.
+After completing the two exercises, we started developing a rough prototype in Unity (see Figure \ref{fig:prototype}). This iteration included basic functionality to make it possible to test and get feedback as quickly as possible. When discussing the tool, it was found necessary to define some terms. 
 
-THE OVERVIEW PICTURE NEEDS TO SHOW influence points connections AND DESCRIBE main camera VS. framing cameras!
+%The camera system has to work with an existing path system that uses \textit{path nodes}. The camera system consists of two main objects, namely \textit{influence points} and \textit{camera settings} (or simply just \textit{cameras}). Together, these are called \textit{framings} and are what the artist is going to place. Figure \ref{fig:manual_overview} shows a simple illustration of this.
+
+The player character in \textit{FEELS} will move on a path-based system, therefore the camera tool is path-based as well. The system will allow the placement of \textit{influence points} along the player character's movement-path, each point is associated with a \textit{camera setting} (or simply just \textit{cameras}) with information about the camera's position, rotation, and field of view. Together, these are called \textit{framings} and are what the artist is going to place. Figure \ref{fig:manual_overview} shows a simple illustration of this. The system will then interpolate the main camera between two connected framings using the player's position on the path.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.40\textwidth]{Pics/manual_overview}
+\caption{Overview of the objects related to the camera system.}
+\label{fig:manual_overview}
+\end{figure}
 
 \subsubsection{General Restrictions}
 The director of the game project had some requirements for how the camera system should work. First of all, it was important that the player character is always visible on the screen. Additionally, the game will feature no traditional \textit{cuts}, so whenever the player is moving, the camera should follow without suddenly cutting to a new angle.
@@ -105,18 +117,13 @@ Write a little more in-depth how influence points and interpolation actually wor
 Depending on the player's position relative to the influence points, the game's \textit{main camera} will inherit camera settings from the framing's cameras.
 
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.40\textwidth]{Pics/manual_overview}
-\caption{Overview of the objects related to the camera system.}
-\label{fig:manual_overview}
-\end{figure}
+
 
 
 \subsection{Exercise 3: First Iteration}
 During one of their daily SCRUM meetings, we presented the tool to the students, as well as providing them a short manual (SEE APPENDIX A). Afterwards, the prototype was shown to three of the students to provide feedback. Each test session lasted for about 10-40 minutes. The students got a chance to try out the tool, as well as expressing their overall opinion about how they preferred the workflow to be.
 
-The facilitator gave the artist small tasks like "Can you place Framings along this paths?" and "Can you try and set the Framing's camera settings as you'd like?". This exercise was semi-structured, and not all questions were predetermined; some was thought up as the exercise went on.
+The facilitator gave the artist small tasks like "Can you place framings along this paths?" and "Can you try and set the framing's camera settings as you'd like?". This exercise was semi-structured, and not all questions were predetermined; some was thought up as the exercise went on.
 
 \begin{figure}[htbp]
 \centering

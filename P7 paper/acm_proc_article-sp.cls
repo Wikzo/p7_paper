@@ -203,7 +203,7 @@
 
 \@beginparpenalty -\@lowpenalty % Before a list or paragraph environment.
 \@endparpenalty   -\@lowpenalty % After a list or paragraph environment.
-\@itempenalty     -\@lowpenalty % Between list items.
+\@itempenalty -\@lowpenalty % Between list items.
 
 %\@namedef{ds@10pt}{\@latexerr{The `10pt' option is not allowed in the `acmconf'
 \@namedef{ds@10pt}{\ClassError{The `10pt' option is not allowed in the `acmconf'	% January 2008
