@@ -5,25 +5,24 @@ In the following, the users can also be described with the terms \textit{student
 %Framing: influence point + camera + connection
 %Player path
 
-An initial mockup of the tool's interface and functionality was created internally. The mockup had the interface all gathered in one window to keep the design minimalist. However, in search of a better design, we included the end-users in the process going forward (see Figure \ref{fig:mockup}).
+An initial mockup of the tool's interface and functionality was created internally (see Figure \ref{fig:mockup}). The mockup had the interface all gathered in one window to keep the design minimalistic. However, in search of a better design, we included the artist in the process going forward.
 
-To ground our design work, we were interested in learning more about our users and how they envisioned the finished product. Therefore, three participatory exercises were conducted \footnote{The exercises were video documented, except for one artist and half of the footage from another artist in the first exercise}. The first of which was done to know their general workflow when working with cameras in the tools they, namely Maya and Unity. Secondly, we wanted to know which features they requested and how they envisioned the finished tool. Finally, they tried using a prototype of the camera tool based on their initial design and feature requests.
-
+To ground our design work, we were interested in learning more about our users and how they envisioned the finished product. Therefore, three participatory exercises were conducted.\footnote{The exercises were video documented, except for one artist, and half of the footage from another artist in the first exercise.} The first was done in order to get a better understanding of the students' general workflow when working with virtual cameras in their tools they, namely Autodesk Maya and Unity. Secondly, we wanted to know which features they requested and how they envisioned the finished tool. Finally, they tried using a prototype of the camera tool based on their initial design and feature requests.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.50\textwidth]{Pics/InitialMockup}
-\caption{The initial concept was to have all the feature tools inside one big window. Early on it was observed that all of the students from The Animation Workshop use a dual-monitor setup, they could then dedicate one monitor to the camera tool.}
+\includegraphics[width=0.30\textwidth]{Pics/InitialMockup}
+\caption{The initial concept was to have all the features inside one big window.}
 \label{fig:mockup}
 \end{figure}
 
-\subsection{Exercise 1: Knowledge of tools} \label{exerciseOne}
+\subsection{Exercise 1: Knowledge of Tools} \label{exerciseOne}
 An artist and a facilitator sat down in front of the artist's work area. The facilitator then asked the artist to show him how he would animate a camera around an object in Maya (see Figure \ref{fig:mads_dual}). This included keyframing and how to change the camera settings for each keyframe. This was done to get an idea of how they usually work. If our camera tool should be successful at helping these artists, it should mimic some of the same behaviour that Maya has. It seemed ideal that the users should be able to utilize their previously-gained knowledge from Maya wherever applicable.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.3\textwidth]{Pics/Mads_dual}
-\caption{All the students at The Animation Workshop work with a dual monitor setup.}
+\caption{All the students at The Animation Workshop work with a dual-monitor setup.}
 \label{fig:mads_dual}
 \end{figure}
 
@@ -31,7 +30,7 @@ After this, the facilitator and artist switched to Unity where he was tasked wit
 
 It was discovered that none of the artists knew how to use a standard Unity feature that lets the player fly around with the scene camera as if they were playing a first-person game ("Flythrough Mode", \cite{unity_flyMode}). The artist were excited about the discovery of this feature. One artist perceived the standard way of moving around in Unity as confusing, while another stated that the way of moving the camera is exactly like in Maya. After testing this ourselves, we concluded that the movement controls in Maya and Unity are indeed very similar (except for the "Flythrough Mode"), which means that the artists should ideally be comfortable with navigating in either of the applications.
 
-\subsection{Exercise 2: Paper prototyping}
+\subsection{Exercise 2: Paper Prototyping}
 The artists were given a blank sheet of paper and a pen and was tasked to draw and write about the camera tool, as they envisioned it in a free-form approach. They then explained what they did and they had a discussion about it. There were no strict requirements of how they approached the task, so some focused a lot on feature requires, while others were more interested in fundamental workflow and user interfaces. This was done with four artists in total.
 
 After this, the same four artists were placed at a desk, one by one, where a variety of labels were laid out in front of them (see Figure \ref{fig:labels}). These labels were marked as different sliders, buttons, windows, field parameters, camera settings, etc. The labels were primarily based on the basic building blocks of Unity's user interface, as well as some of the observations from the first exercise where the users talked about how they worked with Maya.
@@ -39,7 +38,7 @@ After this, the same four artists were placed at a desk, one by one, where a var
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.3\textwidth]{Pics/labels}
-\caption{The users were asked to design their "dream program" by using paper labels as building blocks. They were also allowed to draw their own components if necessary.}
+\caption{The users were asked to design their "dream program" by using paper labels as building blocks.}
 \label{fig:labels}
 \end{figure}
 
@@ -93,19 +92,37 @@ Some of the more concrete findings include:
 \end{itemize}
 \end{itemize}
 
-\subsection{Exercise 3: First iteration}
-After having completed the two exercises, we started developing a rough prototype in Unity (see Figure \ref{fig:prototype}). This iteration included basic functionality to make it possible to test and get feedback as quickly as possible. During one of their daily SCRUM meetings, we presented the tool, as well as providing them a short manual (SEE APPENDIX A).
+\subsection{Design and Implementation}
+After completing the two exercises, we started developing a rough prototype in Unity (see Figure \ref{fig:prototype}). This iteration included basic functionality to make it possible to test and get feedback as quickly as possible. When discussing the tool, it was found necessary to define some terms. The camera system has to work with an existing path system that uses \textit{path nodes}. The camera system consists of two main objects, namely \textit{influence points} and \textit{camera settings} (or simply just \textit{cameras}). Together, these are called \textit{framings} and are what the artist is going to place Figure \ref{fig:manual_overview} shows a simple illustration of this.
+
+THE OVERVIEW PICTURE NEEDS TO SHOW influence points connections AND DESCRIBE main camera VS. framing cameras!
+
+\subsubsection{General Restrictions}
+The director of the game project had some requirements for how the camera system should work. First of all, it was important that the player character is always visible on the screen. Additionally, the game will feature no traditional \textit{cuts}, so whenever the player is moving, the camera should follow without suddenly cutting to a new angle.
+
+\subsubsection{How the Interpolation Algorithm Works}
+Write a little more in-depth how influence points and interpolation actually works...
+Depending on the player's position relative to the influence points, the game's \textit{main camera} will inherit camera settings from the framing's cameras.
 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.50\textwidth]{Pics/MainSetup}
+\includegraphics[width=0.40\textwidth]{Pics/manual_overview}
+\caption{Overview of the objects related to the camera system.}
+\label{fig:manual_overview}
+\end{figure}
+
+
+\subsection{Exercise 3: First Iteration}
+During one of their daily SCRUM meetings, we presented the tool to the students, as well as providing them a short manual (SEE APPENDIX A). Afterwards, the prototype was shown to three of the students to provide feedback. Each test session lasted for about 10-40 minutes. The students got a chance to try out the tool, as well as expressing their overall opinion about how they preferred the workflow to be.
+
+The facilitator gave the artist small tasks like "Can you place Framings along this paths?" and "Can you try and set the Framing's camera settings as you'd like?". This exercise was semi-structured, and not all questions were predetermined; some was thought up as the exercise went on.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.40\textwidth]{Pics/MainSetup}
 \caption{Rough prototype with basic camera manipulation.}
 \label{fig:prototype}
 \end{figure}
-
-Three artists tried it out for 10-40 minutes each. They got a chance to try out the tool, as well as expressing their overall opinion about how they preferred the workflow to be.
-
-The facilitator gave the artist small tasks like "Can you place Framings along this paths?" and "Can you try and set the Framing's camera settings as you'd like?". This exercise was semi-structured, and not all questions were predetermined; some was thought up as the exercise went on.
 
 Over the course of the exercise, some key points was discovered through observation or discussion with the artist. The biggest piece of feedback revolved how the users are supposed to place the virtual camera in the scene. Initially, users were supposed to use Unity's "Flythrough Mode" (see Section \ref{exerciseOne}) and place the camera as they liked. Then, they should press the "Save camera position" button (see Figure \ref{fig:prototype}). However, some users were confused about this, since they thought that they now they continuously looked through the camera's point of view, i.e. if they moved around after they'd pressed the button, the framing camera should be changed as well. This was not how the system worked, since it simply just saved the scene camera's position to the framing camera whenever the button was pressed. In other words, the users mental models didn't fit with how the tool worked.
