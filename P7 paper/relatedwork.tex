@@ -2,13 +2,32 @@
 %Camera Path Animator 3.0 (Unity asset store).
 %Camera system that follows the character but also focuses on showing the environment - Used in the game God of War.
 
-During researching, a tool called Camera Path Animator 3.0 by Jasper Stocker was found \cite{unity_camTool}. It's can be used for creating animated cameras within Unity (see Figure \ref{fig:unity_path_cam_tool}). As the name suggests, it works by animating the camera along a specified path, which can have various shapes (e.g., Bezier and Hermite curves). The tool is primarily targeted towards creating cameras that move linearly along a set path, i.e. for use in a non-interative cutscene. It provides various ways of inserting, moving and deleting points, as well as settings that can be changed, such as field of view, speed, interpolation type and easing. Additionally, it has a event system for triggering certain events at certain points in the path.
+During initial research, we found a tool called Camera Path Animator 3.0 by Jasper Stocker  \cite{unity_camTool}. It can be used for creating animated cameras within Unity. As the name suggests, it works by animating the camera along a specified path, which can have various shapes (e.g., Bezier and Hermite curves). The tool is primarily targeted towards creating cameras that move linearly along a set path, i.e. for use in a non-interactive cutscene. It provides various ways of inserting, moving and deleting points, as well as changing settings such as field of view, speed, interpolation type and easing. Additionally, it has a event system for triggering certain events at certain points in the path.
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=0.40\textwidth]{Pics/unity_path_cam_tool}
+%\caption{Overview of the objects related to the camera system.}
+%\label{fig:unity_path_cam_tool}
+%\end{figure}
+
+%The God of War video game franchise for the PlayStation systems has also made notable use of their camera systems. The developers call the system Rail Driven Cameras and consists of a 'rail' that will be placed in the game world. A camera is keyed in both ends of the rail, and the camera will then animate between them as the protagonist moves along the rail. % Det her føles pølse, ikke meget at skrive om det og super unscientific
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.50\textwidth]{Pics/unity_path_cam_tool}
-\caption{Overview of the objects related to the camera system.}
-\label{fig:unity_path_cam_tool}
+\includegraphics[width=0.30\textwidth]{Pics/gow_cameraZones}
+\caption{Depending on what zone the player is located in, certain cameras will be activated.}
+\label{fig:gow_zones}
 \end{figure}
 
-The God of War video game franchise for the PlayStation systems has also made notable use of their camera systems. The developers call the system Rail Driven Cameras and consists of a 'rail' that will be placed in the game world. A camera is keyed in both ends of the rail, and the camera will then animate between them as the protagonist moves along the rail. % Det her føles pølse, ikke meget at skrive om det og super unscientific
+In a behind-the-scenes documentary, the developers behind the PlayStation game series \textit{God of War}, Santa Monica Studio, talks about the importance of being able to frame the scene \cite{gow_camera}. Depending on the context, it is important for them to frame the scene, so players know where they should be heading next (see Figure \ref{fig:gow_jump}). They use camera zones to determine what area the player is in and then active the corresponding camera for that zone (see Figure \ref{fig:gow_zones}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.40\textwidth]{Pics/gow_next}
+\caption{The camera's framing can help the designer guide the player in the right direction.}
+\label{fig:gow_jump}
+\end{figure}
+
+
+%An example of this is when the main character has to jump from one 

@@ -7,4 +7,11 @@ A keyframe is an event and/or change in one or more parameters over time. Each k
 
 But games are dynamic, not linear, so this means keyframes can't be associated with a point in time. Specifically for this game, the camera settings would change according to the player's movement, so keyframes needed to be associated with this. Furthermore, the player had to walk on a fixed path, which made the interpolation significantly simpler.
 
-A quick paper prototype of the initial concept showed promise and the idea of associating keyframes with player position was easily understood. To avoid confusion, these keyframes were renamed \textit{framings}. A framing consists of an \textit{influence point} and a camera (Andreas' tegning). When the player's position is the same as an influence point, that framing will dominate, meaning the main camera will use the camera settings of the associated camera. Moving between influence points causes an interpolation between each camera setting. This interpolation can be manipulated in a graph editor, as in Maya.
+A quick paper prototype of the initial concept showed promise and the idea of associating keyframes with player position was easily understood. To avoid confusion, these keyframes were renamed \textit{framings}. A framing consists of an \textit{influence point} and a camera (see Figure \ref{fig:framingConcept}). When the player's position is the same as an influence point, that framing will dominate, meaning the main camera will use the camera settings of the associated camera. Moving between influence points causes an interpolation between each camera setting. This interpolation can be manipulated in a graph editor, as in Maya.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.3\textwidth]{Pics/Instructions}
+\caption{Illustration of the framing concept. A framing consists of an influence point and a group of camera settings.}
+\label{fig:framingConcept}
+\end{figure}
