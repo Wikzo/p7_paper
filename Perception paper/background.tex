@@ -1,61 +1,58 @@
 \section{Background Knowledge}
 
 \subsection{Eye movements}
-To understand how speed reading is possible, it's important to understand some basics on how the eye moves.
+To understand how speed reading is possible, it's important to know some basics on how the eye moves.
 
-When you read, visually analyse or look for something, your eyes are doing a series of movements called \textit{saccades}. In between these movements your eyes shortly fixate on elements, these stops called \textit{fixations}. Each fixations lasts only around 200-300 ms, so our eyes are quickly looking around a scene to find new details to fixate on. Luckily the movements of the eyes themselves are incredibly fast, reaching speeds of 500 degrees a second \cite{eyeMovement}.
+When you read, visually analyse or look for something, your eyes are doing a series of movements called \textit{saccades}. Between these movements, your eyes shortly fixate on elements. These stops are called \textit{fixations}. Each fixations lasts only around 200-300 ms, so our eyes are quickly looking around a scene to find new details to fixate on. The movements of the eyes  are incredibly fast, reaching speeds of 500 degrees a second \cite{eyeMovement}.
 
 
 But this all depends on what you're using your eyes for. There is generally three types of saccades: pursuit, vergence and vestibular. \textit{Pursuit} is when your eyes are trying to fixate on something moving. Generally, in these cases, the saccades are slower, as your eyes are following the target and not going back and forth between different targets \cite{eyeMovement}.
-\textit{Vergence} is the inwards movement of your eyes to focus on something getting closer to you.
+\textit{Vergence} is the inwards movement of your eyes to focus on something getting closer to you \cite{eyeMovement}.
 
 \textit{Vestibular} movement is the eyes rotating to compensate for body and/or head movement. This is both caused by visual stimulation, but mostly by the vestibular organ in your ears. This is also also why your sight gets blurry when you're dizzy.
 
-In the case of reading, it's also important to talk about the different kinds of small saccades the eyes are capable of. \textit{Nystagmus} is very tiny and quick movements in the eyes, which causes a kind of tremor in your vision \cite{eyeMovement}. You will notice it when staring intently at a fixed point. It's believed that this is a precaution in the eyes to make the nerve cells keep firing by continuously stimulating them. Furthermore, the eyes also experience small \textit{drifts}. These are believed to be the results of a less-than-perfect control of the oculomotor resulting in your eyes slowly drifting to one side. To accommodate this the eyes make tiny saccades, called \textit{microsaccades}, to realign themselves \cite{eyeMovement}.
+In the case of reading, it's also important to talk about the different kinds of small saccades the eyes are capable of. \textit{Nystagmus} are tiny and quick movements in the eyes, which causes a tremor in your vision \cite{eyeMovement}. You will notice it when staring intently at a fixed point. It's believed that this is a precaution in the eyes to make the nerve cells keep firing by continuously stimulating them. Furthermore, the eyes also experience small \textit{drifts}. These are believed to be the results of a less-than-perfect control of the oculomotor, resulting in the eyes slowly drifting to one side. To accommodate this, the eyes make tiny saccades, called \textit{microsaccades}, to realign themselves \cite{eyeMovement}.
 
-Further, it's important to the understanding of reading is \textit{saccade latency}. Every time a saccade is made, some calculations are needed to approximate where to move the eyes to fixate on a desired target. Even if excluding the uncertainty of where to move the eyes, it would still take 150-175 ms for the initial "request" of moving the eyes to the actual start of the movement. Cognitive processes further increases this latency, but also increases accuracy, meaning your fixation falls closer to the point of interest.
+Another aspect to understand is \textit{saccade latency}. Every time a saccade is made, some calculations are needed to approximate where to move the eyes to fixate on a desired target. Even if excluding the uncertainty of where to move the eyes, it would still take 150-175 ms for the initial "request" of moving the eyes to the actual start of the movement. Cognitive processes further increases this latency, but also increases accuracy, meaning your fixation falls closer to the point of interest.
 \textbf{
 (Gustav: maybe write something about cognitive processes from Perception book here)}
 
+<<<<<<< HEAD
 During the saccade, though, everything is a blur. Or it should be anyway. It seems certain parts associated with processing visual inputs are halted during saccades. This process is called \textit{saccadic suppression}. But this is independent of the lexical processing, which means a reader is able to process read text in parallel with saccades \cite{eyeMovement}.
+=======
+During the saccade, though, everything is a blur. Or it should be anyway. It seems certain parts associated with processing visual inputs are halted during saccades. This process is called \textit{saccadic suppression}. This is independent of the lexical processing, which means a reader is able to process read text in parallel with saccades \cite{eyeMovement}.
+>>>>>>> ca4418530b4aaedf4d0782b93364aa44beffc227
 
-A fixation is not needed to read a word though. Your attention can be shifted to objects or words in your peripheral vision. But it is not possible to make a saccade without shifting attention to the fixation.
+A fixation is not needed to read a word, though. Your attention can be shifted to objects or words in your peripheral vision. But it is not possible to make a saccade without shifting attention to the fixation.
 
 \subsection{Optimal Recognition Position} \label{ORP}
-The destination of each saccade when reading, or the fixation point, depends on the content of the sentence; sometimes, the eye also skip words by saccading past them. 80\% of the fixation points are on content words (nouns, verbs and adjectives) and the remaining 20\% are on articles, pronouns, and conjunctions \cite{eysenck_cognitive_2010}. The fixation point inside the words themselves, the \textit{optimal recognition position} (ORP), has an impact on how fast a reader can name the word they are looking at. Research has shown that the ORP is near the middle or slightly left of the middle \cite{oregan_optimal_1992, nazir_letter_1998, oregan_convenient_1984}. The added recognition time as the fixation point deviates from the ORP is a U-shaped curve, with around 20 ms added for each letter of deviation.
+The destination of each saccade when reading, or the fixation point, depends on the content of the sentence; sometimes, the eye also skip words by saccading past them. 80\% of the fixation points are on content words (nouns, verbs and adjectives) and the remaining 20\% are on articles, pronouns, and conjunctions \cite{eysenck_cognitive_2010}. The fixation point inside the words themselves, the \textit{optimal recognition position} (ORP), has an impact on how fast a reader can name the word they are looking at. Research has shown that the ORP is near the middle or slightly left of the middle \cite{oregan_optimal_1992, nazir_letter_1998, oregan_convenient_1984}. The added recognition time as the fixation point deviates from the ORP is a U-shaped curve, see Figure \ref{fig:ucurve}, with around 20 ms added for each letter of deviation.
 
-Not surprisingly removing the spacing between words decreases the reading speed with around 30\%. Fixation does not fall on the ORP but tends to the beginning of words. Interestingly enough adding spaces in long words, like long Danish or German compound words, actually increased reading speed, even though it was grammatically incorrect. Likewise with putting in spaces in Thai, where there are no spaces.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.4\textwidth]{Pics/ucurve}
+\caption{The time it took participants to name the word they saw depending on their fixation point in the word. This graph shows results for words of length 5, 7, 9 and 11. \protect\cite{oregan_convenient_1984}}
+\label{fig:ucurve}
+\end{figure}
 
-\textbf{(Gustav: maybe add an image of this curve?)}
+Removing the spacing between words decreases the reading speed with around 30\%. Fixation does not fall on the ORP but tends to the beginning of words. Splitting long words, like long Danish or German compound words, into their individual words, increases reading speed, even though it was grammatically incorrect. Likewise with putting in spaces in Thai, where there are no spaces.
 
 \subsection{Meta-guiding reading (using a pen to keep focus)}
 GUSTAV
 
-\subsection{Modes for reading}
-BENJAMIN
-
-("gears" - depending on context, you switch "gear"):
-Read for memorize
-Read for learning
-Rauding (sentential integration, lexical + semantic) - most optimal
-Skimming (semantic encoding)
-Scanning (lexical access? using memory)
-Reading rate (WPM) - rauding is the best?
-Cognitive speed vs. reading speed
-E = AR (E: Efficiency, A: Accuracy, R: Rate)
-=======
 \subsection{Attention}
 
 
 \subsection{Reading Processes}
 \citeA{carver_reading_1992} presents five reading processes, also referred to as \textit{gears} (see Figure \ref{fig:trace_cross}). Each gear is defined by its \textit{goal}, \textit{culminating component}, and its \textit{speed}, measured by \textit{WPM} (words per minute). WPM also varies based on reading level, so to block out this bias, \citeauthor{carver_reading_1992} bases his experiments exclusively on college students. The following section is based on his study.
 
-\begin{figure}[htbp]
+\begin{figure*}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth]{Pics/gears_list}
-\caption{Each gear has its own goal, culminating component, and WPM.}
+\captionsetup{justification=centering}
+\includegraphics[width=1\textwidth]{Pics/gears_list}
+\caption{Each gear has its own goal, culminating component, and WPM. \protect\cite{carver_reading_1992}}
 \label{fig:gears_list}
-\end{figure}
+\end{figure*}
 
 The goal relies on the reader's intent when reading the text. For instance, the reader could read the text just to find a single word (scanning). The culminating component of a gear, is then the cognitive process that it requires. \textit{Lexical access} is the component used for finding a single word in memory. If the reader's goal changed to finding a certain sentence in the text, such as in skimming, transposed words must be found and the activity would require an additional component; \textit{semantic encoding}. Other than just finding the words, the reader must now determine the meaning of the sentence. In order for the reader to understand the complete thought of a sentence, the \textit{sentential integration} component must be added. These three components together are the requirement for the most basic and most used reading process - \textit{rauding}, also known as \textit{typical reading}. The word comes from a combination of 'auding' and 'reading', as they both share the same underlying comprehension processes. If the goal of reading the text is to learn, e.g., in order to answer a test, the \textit{idea remembering} component is added. In this gear, some words require re-reading and longer time to process. The final gear is focused around remembering the text and uses the \textit{fact rehearsal} component. This gear requires rehearsing the material and memorizing it. 
 \citeA{carver_reading_1992} goes on to mention that the best readers shift up and down in gear while reading, based on the difficulty of the material - a term called \textit{process flexibility}. 
@@ -77,5 +74,48 @@ This might indicate that when using schema, readers use skimming or scanning bef
 
 \subsection{Sub-vocalization}
 \citeA{bruinsma_should_1980} says that ...
+
+When children learn to read, they typically do this by associating printed symbols with previously-acquired listening and speaking skills \cite{bruinsma_should_1980}. Even though this "silent reading" soon becomes inaudible, the movements of lips, tongue and larynx sometimes continue for many years. These small movements are known as \textit{sub-vocalization} \cite{bruinsma_should_1980}. It has been found that poor readers demonstrate a greater degree of sub-vocalization than proficient readers. It has been believed that lip movements and sub-vocalization should be suppressed, so as the reading rate will increase \cite{bruinsma_should_1980}. However, according to \citeA{j_covert_1970}, oral behaviour during silent performance of language tasks does indeed serve a language function. \citeauthor{j_covert_1970} concludes that increased covert oral behaviour is beneficial during silent reading: \emph{"The implications for the teacher, thus, is that she should not tamper with the child's subvocalization? It is likely that the child NEEDS to subvocalize while reading, in any event, the subvocalization naturally becomes reduced in time."} \cite{bruinsma_should_1980}. Even if there are ways to reduce sub-vocalization, it might not be desirable for readers that have difficulty comprehending even low-level material. Instead, they should be encouraged to sub-vocalize to ensure the maximum comprehension. In situations where students are 
+
+In
+situations where students are reading
+material difficult for them, they may,
+in fact, be encouraged to subvocal
+ize or even to vocalize in order to
+have direct auditory aid to the
+processing of prose (
+
+\cite{bruinsma_should_1980}.
+
+
+
+individuals? Cleland (1971) demon
+strated that the best way to reduce
+implicit speech and to improve read
+ing rate is to improve students' ability
+to comprehend the material. Har
+dyck and Petrinovich (1969) showed
+that it is possible to reduce subvocal
+speech in competent readers who
+have overlearned the response by
+using auditory feedback techniques.
+However, they stressed that subjects
+who are of limited ability and who
+have difficulty comprehending even
+relatively low level material should,
+perhaps, be encouraged to sub vocal
+ize so as to ensure the maximum
+possible comprehension. Davies
+(1971), in a review of research on
+implicit speech from 1868 to 1970,
+concluded that implicit speech is a
+desirable developmental learning re
+inforcement activity, and that it
+should not be prematurely elimin
+ated. Edfeldt (1960, p. 154), in his
+classic work on the subject, con
+cludes that "silent speech actually
+constitutes an aid toward better 
+
 %http://www.jstor.org/stable/20195232
 %[Conclusions The evidence cited here should caution teachers to be very careful in their efforts to reduce subvocalization during silent reading. This should be done directly only with students who are otherwise compe tent readers and who are reading relatively easy material ...]
