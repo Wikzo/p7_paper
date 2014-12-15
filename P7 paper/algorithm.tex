@@ -1,5 +1,25 @@
 \section{Important Algorithms}
 \subsection{Interpolation}
 
+Each influence point is placed on the player path. The camera interpolation ($f_{i}$) is a function of the camera settings ($i1_{cs}$, $i2_{cs}$) of the two influence points closest to the player character's position ($PC_{p}$) following the paths, and a calculated weight ($w$).
+\begin{equation}
+f_{i} = f(PC_{p})
+\end{equation}
+The two nearest influence points are found by doing a search from the player character's position along the paths in both directions. The distance travelled in both directions until hitting an influence point is logged ($i2_{d}, i2_{d}$).
+\begin{equation}
+w = i1_{d}/(i2_{d} + i2_{d})
+\end{equation}
+In the case an influence point was not found in a direction, that side's total distance travelled is zero. The artist is further able to manipulate this weight for each camera setting value ($cs_{i}$) through a graph editor. Evaluating the curve at $w$ gives us a new weight $w_{i}$ for each camera setting value. In pseudo code, this gives us the following interpolation for each camera setting:
+\begin{equation}
+f_{i} = i1_{cs_{i}} * w_{i} + i2_{cs_{i}} * (1-w_{i})
+\end{equation}
 \subsection{Path-based Slider-preview}
-
+To make the slider preview, our solution was to calculate a possible player character position ($PC_{p}$) from the given slider-weight ($sw$), and the start and end framings ($i_{start}, i_{end}$).
+\begin{equation}
+PC_{p} = f(sw, i_{start}, i_{end})
+\end{equation}
+Drawing from the same logic as in the interpolation, a search is started from the influence point of the start framing ($i_{start}$) following the paths in both directions, logging the total distance travelled ($TD$) until it hits the influence point of the end framing ($i_{end}$). Each time the search passes another influence point, it logs which one ($i_{n}$) together with the distance travelled ($i_{n_{d}}$). All distances ($i_{n_{d}}$) are normalized ($i_{n_{dn}}$), with the total distance travelled ($TD$) equal to 1. The slider-weight ($sw$) now fits in an interval between two influence point positions ($i_{before_{dn}}, i_{after_{dn}}$). The possible player character position ($PC_{p}$) is then calculated and used as argument in $f_{i} = f(PC_{p})$.
+\begin{equation}
+f_{i} = f(i_{after_{p}} * (1 - sw - i_{before_{dn}} + i_{before_{p}} * (sw - i_{before_{dn}}))
+\end{equation}
+where $i_{n_{p}}$ is the position of that influence point.
