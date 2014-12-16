@@ -1,30 +1,26 @@
 \subsection{Important Algorithms}
 \subsubsection{Interpolation}
 
-Each influence point is placed on the player path. The camera interpolation ($f_{i}$) is a function of the camera settings ($i1_{cs}$, $i2_{cs}$) of the two influence points closest to the player character's position ($PC_{p}$) following the paths, and a calculated weight ($w$).
-
-%% det her virker nemmere at læse:
-(\textbf{Foreslag af Gustav for readability:}
-($i1_{camera}$, $i2_{camera}$) og ($Player_{pos}$) og ($i2_{direction}, i2_{direction}$) )
-
+Each influence point is placed on the player path. The camera interpolation ($f_{i}$) is a function of the player's position ($P_{pos}$) used to calculate an interpolation between the camera settings ($i1_{cam}$, $i2_{cam}$) of the two influence points closest to the player's position following the paths, with a weight ($w$) based on the positions of the influence points.
 \begin{equation}
-f_{i} = f(PC_{p})
+f_{i} = f(P_{pos})
 \end{equation}
-The two nearest influence points are found by doing a search \textbf{(what kind of search???, Gustav - linear search?)} from the player character's position along the paths in both directions. The distance travelled in both directions until hitting an influence point is logged as ($i2_{d}, i2_{d}$).
+The two closest influence points are found by doing a linear search from the player's position along the paths in both directions. The distance travelled in both directions until hitting an influence point is logged ($i1_{dist}, i2_{dist}$).
 \begin{equation}
-w = i1_{d}/(i2_{d} + i2_{d})
+w = i1_{dist}/(i1_{dist} + i2_{dist})
 \end{equation}
-In the case an influence point was not found in a direction, that side's \textbf{(what's meant by side???, Gustav)} total distance travelled is zero. The artist is further able to manipulate this weight for each camera setting value ($cs_{i}$) through a graph editor. Evaluating the curve at $w$ gives us a new weight $w_{i}$ for each camera setting value. In pseudo code, this gives us the following interpolation for each camera setting:
+In the case an influence point was not found in a direction, the total distance travelled in that direction is zero. The artist is further able to manipulate this weight for each camera setting value ($cam_{i}$) through the graph editor. Evaluating the curve at $w$ gives us a new weight $w_{i}$ for each camera setting value. In pseudo code, this gives us the following interpolation for each camera setting:
 \begin{equation}
 f_{i} = i1_{cs_{i}} * w_{i} + i2_{cs_{i}} * (1-w_{i})
 \end{equation}
 \subsubsection{Path-based Slider-preview}
-To make the slider preview, our solution was to calculate a possible player character position ($PC_{p}$) from the given slider-weight ($sw$), and the start framing and end framing ($i_{start}, i_{end}$).
+To make the slider preview, our solution was to calculate a possible player position ($P_{pos}$) from the given slider-weight ($sw$) and the influence points of the start and end framing ($i_{start}, i_{end}$).
 \begin{equation}
-PC_{p} = f(sw, i_{start}, i_{end})
+P_{pos} = f(sw, i_{start}, i_{end})
 \end{equation}
-Drawing from the same logic as in the interpolation, a search \textbf{(what kind of search???, Gustav)} is started from the influence point of the start framing ($i_{start}$) following the paths in both directions, logging the total distance travelled ($TD$) until it hits the influence point of the end framing ($i_{end}$). Each time the search passes another influence point, it logs ($i_{n}$), together with the distance travelled ($i_{n_{d}}$). All distances ($i_{n_{d}}$) are normalized ($i_{n_{dn}}$), with the total distance travelled ($TD$) equal to 1. The slider-weight ($sw$) now fits in an interval between two influence point positions ($i_{before_{dn}}, i_{after_{dn}}$). The possible player character position ($PC_{p}$) is then calculated and used as an argument in $f_{i} = f(PC_{p})$.
-\begin{equation}
-f_{i} = f(i_{after_{p}} * (1 - sw - i_{before_{dn}} + i_{before_{p}} * (sw - i_{before_{dn}}))
-\end{equation}
-where $i_{n_{p}}$ is the position of that influence point.
+Drawing from the same logic as in the interpolation, a linear search is done from the influence point of the start framing ($i_{start}$) following the paths in both directions, logging the total distance travelled ($TD$) until it hits the influence point of the end framing ($i_{end}$). Each time the search passes another influence point, it logs it ($i_{n}$) together with the distance travelled ($i_{n_{dist}}$). All distances ($i_{n_{dist}}$) are normalized ($i_{n_{distNorm}}$), with the total distance travelled ($TD$) set to 1. The slider-weight ($sw$) now fits in an interval between two influence point distances ($i_{before_{distNorm}}, i_{after_{distNorm}}$). The possible player character position ($P_{pos}$) is then calculated and used as the argument in $f_{i} = f(P_{pos})$.
+\begin{eqnarray}
+P_{pos} &=& i_{after_{pos}}\left(1 - \left(sw - i_{before_{distNorm}}\right)\right)\nonumber \\
+&&\mbox{}+ i_{before_{pos}}\left(sw - i_{before_{distNorm}}\right)
+\end{eqnarray}
+where $i_{n_{pos}}$ is the world position of $n$ influence point.
