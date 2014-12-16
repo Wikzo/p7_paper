@@ -1,10 +1,3 @@
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=1\textwidth]{Pics/InterpolationExample}
-\caption{An example of a camera interpolation between three framings (Framing A, Framing B and Framing C). These framings contain a position, rotation and field of view. As the player avater walks (the orange cube), the camera will follow it by interpolating between the framings. The top-down overview shows the camera's position in relation to the player character.}
-\label{fig:InterpolationExample}
-\end{figure*}
-
 \section{Introduction}
 %BASED ON PRELIMIANARY RESEARCH, TOOLS SHOULD BE DEVELOPED WITH A MODULAR MINDSET AND ALLOW FOR TWEAKABLE PARAMTERS and stuff
 
@@ -14,14 +7,13 @@
 %Framing system
 %Path system
 
+There are many ways to design camera motions in games. Fundamentally, one can distinguish between \textit{cinematic sequences} and \textit{interactive gameplay}. These two are typically considered mutually exclusive, because cinematic sequences per definition is non-interactive \cite{haigh-hutchinson_real-time_2009}. However, it is possible to mix those two, so the camera can dynamically adapt to certain things happening in the game, such as game events and player input. This means that a sequence does not have to be viewed in exactly the same way every time.
 
-There are many ways to design camera motions in games. Fundamentally, one can distinguish between \textit{cinematic sequences} and \textit{interactive gameplay}. These two are typically considered mutually exclusive, because cinematic sequences per definition is non-interactive \cite{haigh-hutchinson_real-time_2009}. However, it is also possible to mix those two, so the camera can dynamically adapt to certain things happening in the game like game events and player input. This means that a sequence does not have to be viewed in exactly the same way every time. 
-
-This present paper will present an approach to create a tool for a specific group of artists. The tool will be able to define camera movements in a game where the player avatar can only move along predefined paths. Creating a tool for these artists is challenging since they have knowledge and experience working in the time domain (animation), whereas the game will be dynamic and interactive. The created camera tool, named \textit{Framing-based Camera Tool} (FCT), will be designed together with these artists.
+This paper presents an approach to creating a tool for a specific group of artists whose main working domain is time-based animation. Creating a tool for these artists is challenging, since they have knowledge and experience working with movies, which is a time-based medium, whereas the game will be dynamic and interactive.  The tool is able to define camera movements in a game where the player character moves along pre-defined paths. Our camera tool, named the \textit{Framing-based Camera Tool} (FCT), was developed using the Unity game engine. It has been designed in cooperation with the artists using methods from participatory design. The main finding from this was that the artists are quite comfortable with using keyframing animations. FCT has been designed with this concept in mind.
 
 %Games often require the ability to replay previous sequences of the gameplay. This can be used to replicate certain events to re-create the motion and visual state of objects in a scene \cite{haigh-hutchinson_real-time_2009}. This can be achieved by recording the rendering state of objects on a set amount of frames, and then use \textit{interpolation} to calculate the state of said objects. Interpolation is a method of inserting intermediate values into a set of data and makes it possible to take sampled data and generate new points in between \cite{haigh-hutchinson_real-time_2009}. Replaying of this data can be referred to as \textit{keyframing}. Keyframing of camera data requires position and orientation of the camera, together with a time interval between the samples \cite{haigh-hutchinson_real-time_2009}.
 
-The outline of the paper is as follows. We will discuss the related work in the next section. In Section 3 we will describe how the artists was used to help create the final design of FCT. Section 4 we present FCT while Section (5?) will show how we evaluated FCT and its results. We end with a summary and future work in Section (6?).
+The outline of the paper is as follows: We will discuss the related work in the next section. In Section 3 we will describe how the artists contributed to the design of FCT. Section 4 goes through the design and implementation of FCT, while Section (5?) shows how we evaluated the tool. We end with a summary and future work in Section (6?).
 
 %During the collaboration, it was decided that we should focus on developing a camera system for the game. This tool should empower the artists, so that the artists didn't have to worry about technical details. It should be simple to set up and function in a similar fashion as other 3D applications that the TAW students have been trained in during their three-year education. The camera tool was chosen, since it does not directly influence and interfere with the gameplay, making it easier for the other programmers to work directly on the game.
 

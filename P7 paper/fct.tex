@@ -4,17 +4,17 @@ In traditional animation, keyframes correspond to a point in time, meaning that 
 
 %This interpolation is per default linear, but can be manipulated in a graph editor. Anything that can be represented by numbers can be manipulated through keyframes.
 
-Since games don't follow a linear structure like a movie, keyframes can't be associated with a point in time, because the player is able to move freely around within a pre-defined path. FCT is designed with the player's position in mind. Instead of associating keyframes with time, they are associated with positions in the game's world.
+Since games don't follow a linear structure like a movie, keyframes can't be associated with a point in time, . In this game, the player is able to move freely around within a pre-defined path. FCT is designed with the player's position in mind. Instead of associating keyframes with time, they are associated with positions in the game's world.
 
 %The game is path-based, which means that the player can only walk on a pre-defined path.
 
-To avoid confusion with traditional keyframing, ours have been dubbed \textit{framings}. A framing consists of an \textit{influence point} and a \textit{camera} (see Figure \ref{fig:framingConcept}). The camera holds all of the camera features, such as position and rotation of the camera, as well as field of view. The influence point only has a position. When the player's position is the same as an influence point, the associated camera will dominate. This means that the main camera will use the settings of this camera. Moving between influence points causes an interpolation between each associated camera. Additionally, the interpolation can be manipulated in a graph editor.
+To avoid confusion with traditional keyframing, ours have been dubbed \textit{framings}. A framing consists of an \textit{influence point} and a \textit{camera} (see Figure \ref{fig:framingConceptNew}). The camera holds all of the camera features, such as position and rotation of the camera, as well as field of view. The influence point only has a position. When the player's position is the same as an influence point, the associated camera will dominate. This means that the main camera will use the settings of this camera. Moving between influence points causes an interpolation between each associated camera. Additionally, the interpolation can be manipulated in a graph editor.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.4\textwidth]{Pics/Instructions}
 \caption{Illustration of the framing concept. A framing consists of an influence point and a camera.}
-\label{fig:framingConcept}
+\label{fig:framingConceptNew}
 \end{figure}
 
 \subsection{Path System}
@@ -22,7 +22,7 @@ The game is based on pre-defined paths that the player can walk along.
 \textbf{MATHIAS/BENJAMIN, SKRIV NOGET HER!}
 
 \subsection{Placing an Influence Point}
-After a path has been defined, framings can be placed along this path using the mouse. To indicate that an influence point is going to be created, a small diamond-shaped icon appears near the cursor (see Figure \ref{fig:placingInfluencePoint}). This point snaps to the path. Since the player can only work on the path, it is impossible to create an influence point outside of the path. When clicking with the mouse on the path, the system creates a framing. The connection between an influence point and camera is indicated by a small line. Both can be moved and adjusted independently.
+After a path has been defined, framings can be placed along this path using the mouse. To indicate that an influence point is going to be created, a small diamond-shaped icon appears near the cursor (see Figure \ref{fig:placingInfluencePoint}). This point snaps to the path. Since the player can only work on the path, it is impossible to create an influence point outside of the path. When clicking with the mouse on the path, the system creates a framing. The connection between an influence point and camera is indicated by a small line. The influence point and the camera can be moved and adjusted independently.
 
 Creating a framing while having another framing selected connects the two. This connection is needed for manipulating the interpolation. The interpolation can be adjusted using the built-in graph editor in Unity (see Figure \ref{fig:curve}).
 
@@ -78,7 +78,7 @@ FCT provides two ways of previewing the interpolations. One way is to drag the p
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.3\textwidth]{Pics/slider}
+\includegraphics[width=0.45\textwidth]{Pics/slider}
 \caption{The slider provides a quick way to preview the framings.}
 \label{fig:slider}
 \end{figure}
