@@ -21,8 +21,7 @@ Figure \ref{fig:InterpolationExample} shows an example of how the camera interpo
 %\end{figure}
 
 \subsection{Camera Tools}
-
-During initial research, we found a tool called Camera Path Animator 3.0 \cite{unity_camTool}. It can be used for creating animated cameras within Unity. As the name suggests, it works by animating the camera along a specified path, which can have various shapes (e.g., Bezier and Hermite curves). The tool is primarily targeted towards creating cameras that move linearly along a set path, i.e. for use in cinematic sequences. It provides various ways of inserting, moving and deleting points, as well as changing settings such as field of view, speed, interpolation type and easing. Additionally, it has an event system for triggering certain events at certain points in the path.
+The tool Camera Path Animator 3.0 \cite{unity_camTool} can be used for creating animated cameras within Unity. As the name suggests, it works by animating the camera along a specified path, which can have various shapes (e.g., Bezier and Hermite curves). The tool is primarily targeted towards creating cameras that move linearly along a set path, i.e. for use in cinematic sequences. It provides various ways of inserting, moving and deleting points, as well as changing settings such as field of view, speed, interpolation type and easing. Additionally, it has an event system for triggering certain events at certain points in the path.
 
 %\begin{figure}[htbp]
 %\centering
@@ -33,14 +32,14 @@ During initial research, we found a tool called Camera Path Animator 3.0 \cite{u
 
 %The God of War video game franchise for the PlayStation systems has also made notable use of their camera systems. The developers call the system Rail Driven Cameras and consists of a 'rail' that will be placed in the game world. A camera is keyed in both ends of the rail, and the camera will then animate between them as the protagonist moves along the rail. % Det her føles pølse, ikke meget at skrive om det og super unscientific
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.45\textwidth]{Pics/gow_cameraZones2}
-\caption{When the player enters a camera zone, the camera will interpolate between the two pre-defined cameras associated with that zone.}
-\label{fig:gow_zones}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=0.45\textwidth]{Pics/gow_cameraZones2}
+%\caption{When the player enters a camera zone, the camera will interpolate between the two pre-%defined cameras associated with that zone.}
+%\lab%el{fig:gow_zones}
+%\end{figure}
 
-In a behind-the-scenes documentary, the developers behind the PlayStation game series \textit{God of War}, Santa Monica Studio, talk about the importance of being able to frame the scene \cite{gow_camera}. Depending on the context, it is important for them to frame the scene, so players know where they should be heading next. They use camera zones to determine what area the player is in and then activate the corresponding camera for that zone (see Figure \ref{fig:gow_zones}).
+In a behind-the-scenes documentary, the developers behind the PlayStation game series \textit{God of War}, talk about the importance of being able to frame the scene \cite{gow_camera}. Depending on the context, it is important for them to frame the scene, so players know where they should be heading next. They use camera zones to determine what area the player is in and then activate the corresponding camera for that zone.
 
 %\begin{figure}[htbp]
 %\centering
@@ -51,6 +50,8 @@ In a behind-the-scenes documentary, the developers behind the PlayStation game s
 
 
 %An example of this is when the main character has to jump from one 
+
+\textbf{Scientific material: Write about automatic camera tools (Paulo something-something) - even though we are not using it. Make it clear that our work is different from how other people's camera tools work}
 
 \subsection{Participatory Design}
 Participatory design has been defined as the participation of users in the design process of a system that is to be implemented in an organization \cite{kensing_participatory_1998}. Here, users correspond to workers in the organization. By involving users in the design, their skills, experiences, and interests are taken into consideration, thereby increasing the likelihood that the system will be useful to them.
