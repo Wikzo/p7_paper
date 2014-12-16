@@ -1,16 +1,16 @@
 \section{Participatory Design Findings}
-The user group of the tool is a team of six third year students from The Animation Workshop in Viborg, Denmark who are developing a 3D point-and-click adventure game \cite{adventure_genre}.  The team is a mixture of students from two different educations at the school; Character Animation and Computer Graphics Arts \cite{taw_degrees}. The students will from here on be referred to as artists.
-All artists are familiar with making animation films with Autodesk Maya, however it is the first time they are making a video game. Since the start of the project, the students have been educated in working with the Unity game engine.
-A requirement for the camera tool as requested by the team, was that it should work with a path system, which is used for player navigation. Furthermore, it was requested that the camera should give the artists the freedom to frame the scene as they want, in order to focus on different elements in the scene.
+The user group of the tool is a team of six third year students from The Animation Workshop in Viborg, Denmark who are developing a 3D point-and-click adventure game \cite{adventure_genre}.  The team consists  of students from two different educations of the school; Character Animation and Computer Graphics Arts \cite{taw_degrees}. The students will from here on be referred to as the artists.
+All the artists are familiar with making animation films with Autodesk Maya, however it is the first time they are making a video game. At the start of the project, the artists received an introductory course to the Unity game engine.
+
 To create a tool that takes the artists' current skills and experience into consideration, thereby easing their learning curve, we used techniques from participatory design \cite{part_design}.
 
 \subsection{Activities}
 %\textbf{Write this with an active voice}
 Four different activities using a combination of participatory design techniques were conducted with four artists from the team who had an interest in working with the camera tool. All activities were combined with open interviews as well as video recorded for further analysis and took 15-30 minutes per person.
 
-The first activity, was an observation \cite{part_design} of the artists working in Maya and Unity. The artists were asked to think-aloud \cite{part_design} while performing simple tasks relevant to camera work in Maya and Unity. The purpose of this activity was to gain firsthand experience with the artists' current work practices in Maya as well an understanding of how familiar they were with Unity.
+The first activity, was an observation \cite{part_design} of the artists working in Maya and Unity. The artists were asked to think-aloud \cite{part_design} while performing simple tasks relevant to camera work in Maya and Unity. The purpose of this activity was to gain firsthand experience with the artists' current work practices in Maya as well as an understanding of how familiar they were with Unity.
 
-Second, the artists were asked to list and sketch the features that they would like to see the most in the camera tool. This activity took inspiration from the Freehand Drawing technique \cite{part_design}. The purpose of the activity was to get a foundation for which tasks the artists wanted to be able to do.
+Second, the artists were asked to list and sketch the features that they would like to see the most in the camera tool. This activity took inspiration from the Freehand Drawing technique \cite{part_design}. The purpose of the activity was to get a foundation for which tasks the artists wanted to be able to do with the tool.
 
 After sketching, the artists were asked to visualize the interface of the camera tool with a set of pre-made buttons and windows out of paper based on Unity's interface (see Figure \ref{fig:collage}). The activity took inspiration from the Collage technique \cite{part_design} and its purpose was to get a foundation for the interface design.
 
@@ -21,10 +21,12 @@ After sketching, the artists were asked to visualize the interface of the camera
 \label{fig:collage}
 \end{figure}
 
-The final activity was made after the first design iteration of the tool. At this point, the features that were assessed as most important for the artists had been implemented, however it was still necessary to receive input from the artists. Using the same techniques as in the initial observation, we had the artists to perform simple tasks in Unity with the camera tool. From this, it was possible to see which changes should be made to the tool, especially regarding the interface.
+The final activity was made after the first design iteration of the tool. At this point, the features that were assessed as most important for the artists had been implemented, however it was still necessary to receive input from the artists. Using the same techniques as in the initial observation, we had the artists perform simple tasks in Unity with the camera tool. From this, it was possible to see which changes should be made to the tool, especially regarding the interface.
 
 \subsection{Findings}
-From the previously mentioned activities, we found that the artists in general want features as well as an interface in the camera tool that are similar to Maya. When testing the interface on the artists after the first iteration, the artists also frequently requested the interface to be more reminiscent of Maya's.
+From the previously mentioned activities, we found that the artists in general want features as well as an interface in the camera tool that are similar to those found in Maya.
+
+The artists deemed it essential that the camera tool should give the artists the freedom to frame the scene as they want, in order to focus on different elements in the scene.
 
 An important feature the artists use heavily in Maya when animating the camera in a scene, is keyframing. Here, the artists place points on a timeline, and at each point adjust the camera according to how they want to frame the scene.
 
@@ -33,11 +35,11 @@ There are multiple ways to adjust the camera in Maya. It can be done by manually
 When the artists needed control over how the camera should interpolate between keyframes, they used   Maya's \textit{Graph Editor} \cite{maya_graph}, which allowed them to adjust the interpolation for all camera settings using \textit{animation curves} \cite{maya_graph}. The artists often adjusted multiple curves at the same time and in the same window.
 %\textbf{(Argument for discussion chapter that we didn't include this)}
 
-We also observed that all of the artists work with two monitors and that they often spread Maya's interface out across both monitors to take better advantage of the space. They did this by creating seperate windows for certain features and. 
+We also observed that all of the artists work with two monitors and that they often spread Maya's interface out across both monitors to take better advantage of the space. They did this by creating seperate windows for certain features. 
 
 A common request from all of the artists was the ability to quickly preview their changes. Instead of having to start the game and navigate the player character to a specific framing, the artists wanted to quickly jump to a specific framing to test out how it feels and looks.
 
-Finally, when the artists worked in Unity, we observed that none of them knew how to use a standard Unity feature that lets the player fly around with the scene camera as if they were playing a first-person game \textit{Flythrough Mode} \cite{unity_flyMode}). When we taught them about this feature, they were very excited and thought it was a very good way of navigating in Unity. 
+Finally, we observed that the artists found Unity's \textit{Flythrough Mode} \cite{unity_flyMode}) particularly useful. This feature lets the player fly around with the scene camera as if they were playing a first-person game.
 
 %It was discovered that none of the artists knew how to use a standard Unity feature that lets the player fly around with the scene camera as if they were playing a first-person game ("Flythrough Mode", \cite{unity_flyMode}). The artist were excited about the discovery of this feature. One artist perceived the standard way of moving around in Unity as confusing, while another stated that the way of moving the camera is exactly like in Maya. After testing this ourselves, we concluded that the movement controls in Maya and Unity are indeed very similar (except for the "Flythrough Mode"), which means that the artists should ideally be comfortable with navigating in either of the applications.
 
