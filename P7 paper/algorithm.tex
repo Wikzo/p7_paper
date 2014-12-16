@@ -11,7 +11,7 @@ w = i1_{dist}/(i1_{dist} + i2_{dist})
 \end{equation}
 In the case an influence point was not found in a direction, the total distance travelled in that direction is zero. The artist is further able to manipulate this weight for each camera setting value ($cam_{i}$) through the graph editor. Evaluating the curve at $w$ gives us a new weight $w_{i}$ for each camera setting value. In pseudo code, this gives us the following interpolation for each camera setting:
 \begin{equation}
-f_{i} = i1_{cs_{i}} * w_{i} + i2_{cs_{i}} * (1-w_{i})
+f_{i} = i1_{cam_{i}} * w_{i} + i2_{cam_{i}} * (1-w_{i})
 \end{equation}
 \subsubsection{Path-based Slider-preview}
 To make the slider preview, our solution was to calculate a possible player position ($P_{pos}$) from the given slider-weight ($sw$) and the influence points of the start and end framing ($i_{start}, i_{end}$).
