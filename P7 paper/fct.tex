@@ -8,13 +8,13 @@ Since games don't follow a linear structure like a movie, keyframes can't be ass
 
 %The game is path-based, which means that the player can only walk on a pre-defined path.
 
-To avoid confusion with traditional keyframing, ours have been dubbed \textit{framings}. A framing consists of an \textit{influence point} and a \textit{camera} (see Figure \ref{fig:framingConcept}). The camera holds all of the camera features, such as position and rotation of the camera, as well as field of view. The influence point only has a position. When the player's position is the same as an influence point, the associated camera will dominate. This means that the main camera will use the settings of this camera. Moving between influence points causes an interpolation between each associated camera. Additionally, the interpolation can be manipulated in a graph editor.
+To avoid confusion with traditional keyframing, ours have been dubbed \textit{framings}. A framing consists of an \textit{influence point} and a \textit{camera} (see Figure \ref{fig:framingConceptNew}). The camera holds all of the camera features, such as position and rotation of the camera, as well as field of view. The influence point only has a position. When the player's position is the same as an influence point, the associated camera will dominate. This means that the main camera will use the settings of this camera. Moving between influence points causes an interpolation between each associated camera. Additionally, the interpolation can be manipulated in a graph editor.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.4\textwidth]{Pics/Instructions}
 \caption{Illustration of the framing concept. A framing consists of an influence point and a camera.}
-\label{fig:framingConcept}
+\label{fig:framingConceptNew}
 \end{figure}
 
 \subsection{Path System}
