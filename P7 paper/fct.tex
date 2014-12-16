@@ -24,12 +24,7 @@ The game is based on pre-defined paths that the player can walk along.
 \subsection{Placing an Influence Point}
 After a path has been defined, framings can be placed along this path using the mouse. To indicate that an influence point is going to be created, a small diamond-shaped icon appears near the cursor (see Figure \ref{fig:placingInfluencePoint}). This point snaps to the path. Since the player can only work on the path, it is impossible to create an influence point outside of the path. When clicking with the mouse on the path, the system creates a framing. The connection between an influence point and camera is indicated by a small line. Both can be moved and adjusted independently.
 
-Creating a framing while having another framing selected connects the two. This connection is needed for manipulating the interpolation.
-\textbf{MATHIAS, SKRIV LIDT OM GRAPH EDITOR HER: This is achived using the built-in graph editor of Unity.}
-
-%Additionally, it is possible to create multiple framings and connect them to each other. This is achieved by selecting an already-created influence point and then clicking to create a new one besides it.
-
-Since the influence point and camera constitutes a framing, the system has been designed so selecting either one selects the framing; hence both provide the same options in the settings window.
+Creating a framing while having another framing selected connects the two. This connection is needed for manipulating the interpolation. The interpolation can be adjusted using the built-in graph editor in Unity (see Figure \ref{fig:curve}).
 
 \begin{figure}[htbp]
 \centering
@@ -38,12 +33,20 @@ Since the influence point and camera constitutes a framing, the system has been 
 \label{fig:placingInfluencePoint}
 \end{figure}
 
+%Additionally, it is possible to create multiple framings and connect them to each other. This is achieved by selecting an already-created influence point and then clicking to create a new one besides it.
+
+Since the influence point and camera constitutes a framing, the system has been designed so selecting either one selects the framing; hence both provide the same options in the settings window.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.4\textwidth]{Pics/curve}
+\caption{The graph editor can adjust the interpolation.}
+\label{fig:curve}
+\end{figure}
 \subsection{Adjusting a Camera}
 %In Maya, there are multiple ways to accomplish the same thing. An example of this is how to adjust a camera in the scene. This can be done by manually adjusting the X, Y and Z position and rotation of the camera; moving it by dragging a handle tool; or, alternatively, by using the the \textit{Look Through Selected} feature \cite{maya_lookThrough}. During the initial observations, it was clear that many of the artists at The Animation Workshop preferred the latter. This concept was translated directly into the camera tool. Using the \textit{be the camera} feature (see Figure \ref{fig:beTheCam}), the artists can place their camera by navigating the scene in Unity with the \textit{Flythrough mode} \cite{unity_flyMode}.
 
-MOVEMENT + ROTATION = ALIGNMENT
-
-Besides the traditional ways of moving objects in Unity (either manually changing X, Y and Z coordinates or moving an object via handle gizmos), FCT provides three additional ways: \textit{be the camera}, \textit{snapshot} and \textit{aim point}. The first two take advantage of the scene view in Unity where it is possible to control the camera in a similar way as in first-person controlled computer games. This feature is called the \textit{flythrough mode} \cite{unity_flyMode}. When clicking the \textit{be the camera} button, the tool enters a special mode where the active camera object is automatically moved to the scene view camera. This means that whatever is visible in the scene view will also be visible by the framing camera. The feature will continue to be enabled until the user exits by pressing the \textit{exit the camera} button. Figure \ref{fig:beTheCam} illustrates this concept. \textit{Snapshot} provides a similar feature, but whereas \textit{be the camera} is continuously activated, \textit{snapshot} only happens one time when the button is pressed.
+Besides the traditional ways of aligning objects in Unity (either manually changing X, Y and Z coordinates or adjusting an object via handle gizmos), FCT provides three additional ways: \textit{be the camera}, \textit{snapshot} and \textit{aim point}. The first two take advantage of the scene view in Unity where it is possible to control the camera in a similar way as in first-person controlled computer games. This feature is called the \textit{flythrough mode} \cite{unity_flyMode}. When clicking the \textit{be the camera} button, the tool enters a special mode where the active camera object is automatically aligned to the scene view camera. This means that whatever is visible in the scene view will also be visible by the framing camera. The feature will continue to be enabled until the user exits by pressing the \textit{exit the camera} button. Figure \ref{fig:beTheCam} illustrates this concept. \textit{Snapshot} provides a similar feature, but whereas \textit{be the camera} is continuously activated, \textit{snapshot} only happens one time when the button is pressed.
 
 \begin{figure*}[htbp]
 \centering
