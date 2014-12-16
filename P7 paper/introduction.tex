@@ -1,8 +1,8 @@
 \begin{figure*}[htbp]
 \centering
-\includegraphics[width=1\textwidth]{Pics/Interpolation2}
-\caption{-------------------------}
-\label{fig:Interpolation}
+\includegraphics[width=1\textwidth]{Pics/InterpolationExample}
+\caption{An example of a camera interpolation between three framings (Framing A, Framing B and Framing C). These framings contain a position, rotation and field of view. As the player avater walks (the orange cube), the camera will follow it by interpolating between the framings. The top-down overview shows the camera's position in relation to the player character.}
+\label{fig:InterpolationExample}
 \end{figure*}
 
 \section{Introduction}
@@ -21,7 +21,7 @@ This present paper will present an approach to create a tool for a specific grou
 
 %Games often require the ability to replay previous sequences of the gameplay. This can be used to replicate certain events to re-create the motion and visual state of objects in a scene \cite{haigh-hutchinson_real-time_2009}. This can be achieved by recording the rendering state of objects on a set amount of frames, and then use \textit{interpolation} to calculate the state of said objects. Interpolation is a method of inserting intermediate values into a set of data and makes it possible to take sampled data and generate new points in between \cite{haigh-hutchinson_real-time_2009}. Replaying of this data can be referred to as \textit{keyframing}. Keyframing of camera data requires position and orientation of the camera, together with a time interval between the samples \cite{haigh-hutchinson_real-time_2009}.
 
-The outline of the paper is as follows. We will discuss the related work in the next section. In Section 3 we will describe how the artists was used to help create the final design of FCT. Section 4 we present FCT while Section (5?) will show how we evaluated FCT and its results. We end by with a summary and future work in Section (6?).
+The outline of the paper is as follows. We will discuss the related work in the next section. In Section 3 we will describe how the artists was used to help create the final design of FCT. Section 4 we present FCT while Section (5?) will show how we evaluated FCT and its results. We end with a summary and future work in Section (6?).
 
 %During the collaboration, it was decided that we should focus on developing a camera system for the game. This tool should empower the artists, so that the artists didn't have to worry about technical details. It should be simple to set up and function in a similar fashion as other 3D applications that the TAW students have been trained in during their three-year education. The camera tool was chosen, since it does not directly influence and interfere with the gameplay, making it easier for the other programmers to work directly on the game.
 
