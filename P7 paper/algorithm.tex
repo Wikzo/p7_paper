@@ -14,9 +14,9 @@ The weights $w_1$ and $w_2$ are then computed from the distances $d_1$ and $d_2$
 w_1 = {d_1}/(d_1 + d_2)
 \end{equation}
 \begin{equation}
-w_2 = {d_2}/(d_1 + d_2)
+{w_2 = 1-w_1}
 \end{equation}
-If there is no influence point in one direction, the distance in that direction is zero. The artist is further able to manipulate the weights, $w_1$ and $w_2$, for each camera setting through the graph editor. Evaluating a curve at $w$ produces a new weight for these camera settings that are associated with the camera settings.
+If there is no influence point in one direction, the distance in that direction is zero. The artist is further able to manipulate the weights $w_1$ and $w_2$ for each camera setting through the graph editor. Evaluating a curve at $w_1$ produces new weights for these camera settings that are associated with the camera settings.
 
 %In pseudo code, this gives us the following interpolation for each camera setting:
 %\begin{equation}
@@ -24,7 +24,7 @@ If there is no influence point in one direction, the distance in that direction 
 %\end{equation}
 
 \subsubsection{Path-Based Slider-Preview}
-For the slider preview, a player position, $P_{pos}$, is computed from the given slider value, $w_s$ (from 0 to 1) and the influence points of the start and end framing.
+For the slider preview, a player position $P_{pos}$ is computed from the given slider value $w_s$ (from 0 to 1) and the influence points of the start and end framing.
 
 Drawing from the same logic as in the interpolation, a linear search is performed from the influence point of the start framing following the path in both directions, logging the total distance travelled until the influence point of the end framing is encountered. Using the total distance between the start and end framing, the interval [0,1] of the slider value is mapped to the sequence of the encountered influence points between the start and end framing. For slider values mapped to positions between two influence points, the position $P_{pos}$ is computed using linear interpolation between these influence points.
 

@@ -1,8 +1,12 @@
+\begin{verbatim}
+
+\end{verbatim}
+
 \section{Framing-based Camera Tool (FCT)}
-In this chapter, we describe the main elements of the tool that was developed with the artists. As mentioned in Section \ref{findings}, the artists work with two monitors; hence, the interface has been designed so they can drag windows to either monitor as they please.
+In this chapter, we describe the main elements of the tool that was developed with the artists. As mentioned in Section \ref{findings}, the artists worked with two monitors; hence, the interface has been designed so they can drag elements of the interface to either monitor as they please.
 
 \subsection{Framing Concept}
-In keyframe animation, each keyframe specifies a state at a specific point in time. Additional frames (``in-betweens") are interpolated between these keyframes.
+As mentioned in Section \ref{findings}, keyframing is essential for the artists. In keyframe animation, each keyframe specifies a state at a specific point in time. Additional frames (``in-betweens") are interpolated between these keyframes.
 
 %to a point in time, meaning that when the animation reaches this point in time, the values of this particular keyframing are dominating. Usually, this means that in between keyframes some interpolation is happening. 
 
@@ -28,7 +32,7 @@ To avoid confusion with traditional keyframing, the keyframes for the camera set
 \subsection{Placing an Influence Point}
 In the current implementation of FCT, new influence points snap to pre-defined path segments, which are connections between path nodes. Each path segment keeps a list of associated influence points.
 
-Influence points are represented by small diamond-shaped icons (see Figure \ref{fig:placingInfluencePoint}). The connection between an influence point and a camera is indicated by a small line (see Figure \ref{fig:placingInfluencePoint}). However, the influence point and the camera can be moved and adjust independently.
+Influence points are represented by small diamond-shaped icons (see Figure \ref{fig:placingInfluencePoint}). The connection between an influence point and a camera is indicated by a small line (see Figure \ref{fig:placingInfluencePoint}). However, the influence point and the camera can be moved and adjusted independently.
 
 %After a path has been defined, framings can be placed along this path using the mouse. To indicate that an influence point is going to be created, a small diamond-shaped icon appears near the cursor (see Figure \ref{fig:placingInfluencePoint}). This point snaps to the path. Since the player can only work on the path, it is impossible to create an influence point outside of the path. When clicking with the mouse on the path, the system creates a framing. The connection between an influence point and camera is indicated by a small line. The influence point and the camera can be moved and adjusted independently.
 
@@ -43,7 +47,7 @@ Clicking on the path creates a framing. Creating a framing while having another 
 
 %Additionally, it is possible to create multiple framings and connect them to each other. This is achieved by selecting an already-created influence point and then clicking to create a new one besides it.
 
-Since an influence point and its associated camera settings constitute a framing, selecting either one selects the framing; hence both provide the same options in the settings window.
+Since an influence point and its associated camera settings constitute a framing, selecting either one selects the framing; hence, both provide the same options in the settings window.
 
 \begin{figure}[htbp]
 \centering
@@ -54,14 +58,14 @@ Since an influence point and its associated camera settings constitute a framing
 \subsection{Adjusting a Camera}
 %In Maya, there are multiple ways to accomplish the same thing. An example of this is how to adjust a camera in the scene. This can be done by manually adjusting the X, Y and Z position and rotation of the camera; moving it by dragging a handle tool; or, alternatively, by using the the \textit{Look Through Selected} feature \cite{maya_lookThrough}. During the initial observations, it was clear that many of the artists at The Animation Workshop preferred the latter. This concept was translated directly into the camera tool. Using the \textit{be the camera} feature (see Figure \ref{fig:beTheCam}), the artists can place their camera by navigating the scene in Unity with the \textit{Flythrough mode} \cite{unity_flyMode}.
 
-As mentioned in Section \ref{findings}, the artists preferred the \textit{flythrough mode} in Unity. Besides the standard ways of editing cameras, FCT provides three additional ways; the first two use the \textit{flythrough mode}: \textit{snapshot}, \textit{be the camera} and \textit{aim point}. \textit{Snapshot} sets the scene view camera to the settings of the active camera. \textit{Be the camera} enters a mode in which the scene view camera is always at the active camera until the artist exits the mode (see Figure \ref{fig:beTheCam}). With the \textit{aim point}, the camera automatically looks in the direction of an aim point (see Figure \ref{fig:aimPoint}). This \textit{aim point} can be moved in the scene view like any other object.
+As mentioned in Section \ref{findings}, the artists preferred the \textit{flythrough mode} in Unity. Besides the standard ways of editing cameras, FCT provides three additional ways; the first two can for example use the \textit{flythrough mode}: \textit{snapshot}, \textit{be the camera} and \textit{aim point}. \textit{Snapshot} sets the active camera to the settings of the scene view camera. \textit{Be the camera} enters a mode in which the active camera is always at the scene view camera until the artist exits the mode (see Figure \ref{fig:beTheCam}). With the \textit{aim point}, the active camera automatically looks in the direction of an aim point (see Figure \ref{fig:aimPoint}). This \textit{aim point} can be moved in the scene view like any other object.
 
 %The first two take advantage of the scene view in Unity where it is possible to control the camera in a similar way as in first-person controlled computer games. This feature is called the \textit{flythrough mode} \cite{unity_flyMode}. When clicking the \textit{be the camera} button, the tool enters a special mode where the active camera object is automatically aligned to the scene view camera. This means that whatever is visible in the scene view will also be visible by the framing camera. The feature will continue to be enabled until the user exits by pressing the \textit{exit the camera} button. Figure \ref{fig:beTheCam} illustrates this concept. \textit{Snapshot} provides a similar feature, but whereas \textit{be the camera} is continuously activated, \textit{snapshot} only happens one time when the button is pressed.
 
 \begin{figure*}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{Pics/beTheCam}
-\caption{Pressing the green button puts the user in a special mode where the selected camera inherits position and orientation data from the scene camera. Notice that only a single rock is visible in the left image. The right image shows how the camera can be moved with the \textit{be the camera} feature to reveal more rocks. The preview image with the [Camera\textunderscore 2] label is how it will look in the actual game.}
+\caption{Pressing the green button puts the user in a special mode where the selected camera inherits position and orientation data from the scene camera. Notice that in the right image, the scene view and active camera have aligned and moved slightly. The preview image with the [Camera\textunderscore 2] label is how it will look in the actual game.}
 \label{fig:beTheCam}
 \end{figure*}
 
@@ -77,7 +81,7 @@ As mentioned in Section \ref{findings}, the artists preferred the \textit{flythr
 %It was discovered that none of the artists knew how to use a standard Unity feature that lets the player fly around with the scene camera as if they were playing a first-person game ("Flythrough Mode", \cite{unity_flyMode}). The artist were excited about the discovery of this feature. One artist perceived the standard way of moving around in Unity as confusing, while another stated that the way of moving the camera is exactly like in Maya. After testing this ourselves, we concluded that the movement controls in Maya and Unity are indeed very similar (except for the "Flythrough Mode"), which means that the artists should ideally be comfortable with navigating in either of the applications.
 
 \subsection{Previewing the Interpolation}
-Since previewing is essential for the artists' work, FCT provides three ways of previewing the interpolations. One way is to drag the player object around along the path via the \textit{interactive preview}. A second way is to use the \textit{slider preview}. Here, the artist can select a start framing and an end framing and then drag a slider back and forth, changing the interpolation. Additionally, a ``play" button can be pressed to play the interpolation with the actual player velocity (see Figure \ref{fig:slider}).
+As mentioned in Section \ref{findings}, previewing is essential for the artists' work, FCT provides three ways of previewing the interpolations. One way is to drag the player object around along the path via the \textit{interactive preview}. A second way is to use the \textit{slider preview}. Here, the artist can select a start framing and an end framing and then drag a slider back and forth, changing the interpolation accordingly. Additionally, a ``play" button can be pressed to play the interpolation with the actual player velocity (see Figure \ref{fig:slider}).
 
 %The drawback of this method is that you have to manually locate and move the player around in the scene view, which can sometimes be cumbersome.
 
