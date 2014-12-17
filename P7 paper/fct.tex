@@ -1,20 +1,19 @@
 \section{Framing-based Camera Tool (FCT)}
-In this chapter, we will describe the main elements of the tool that was developed with the artists.
+In this chapter, we describe the main elements of the tool that was developed with the artists.
 
 \subsection{Framing Concept}
-In traditional animation, each keyframe specify a state at specific point in time. Additional frames ("in-betweens") are interpolated for between-keyframes for all all other frames.
-
+In keyframe animation, each keyframe specifies a state at a specific point in time. Additional frames ("in-betweens") are interpolated between these keyframes.
 
 %to a point in time, meaning that when the animation reaches this point in time, the values of this particular keyframing are dominating. Usually, this means that in between keyframes some interpolation is happening. 
 
 %This interpolation is per default linear, but can be manipulated in a graph editor. Anything that can be represented by numbers can be manipulated through keyframes.
 
-Since games usually don't follow a linear structure like a movie, keyframes for the camera animation can't be associated with points in time. In our case, the player is able to move freely around within a pre-defined path. Therefore, FCT associates keyframes with the player's position in the game world instead of time.
+In contrast to movies, games usually don't follow a linear structure, thus keyframes for the camera animation can't be associated with points in time. In our case, the player is able to move freely around within a pre-defined path. Therefore, FCT associates keyframes with the player's position in the game world instead of time.
 
 
 %The game is path-based, which means that the player can only walk on a pre-defined path.
 
-To avoid confusion with traditional keyframing, the keyframes for the camera settings have been named \textit{framings}. A framing consists of an \textit{influence point} and a \textit{camera} (see Figure \ref{fig:framingConceptNew}). The camera holds all of the camera settings, such as position and rotation of the camera, as well as field of view. The influence point only has a position. When the player's position is the same as an influence point, the associated camera will determine the in-game camera. This means that the in-game camera will use the settings of this camera. Moving between influence points causes an interpolation between the associated camera. The interpolation can be customized in a graph editor.
+To avoid confusion with traditional keyframing, the keyframes for the camera settings have been named \textit{framings}. A framing consists of an \textit{influence point} and a \textit{camera} (see Figure \ref{fig:framingConceptNew}). The camera holds all of the camera settings, such as position and rotation of the camera, as well as the field of view. The influence point only specifies a position. When the player's position is the same as an influence point, the associated camera will determine the in-game camera. This means that the in-game camera will use the settings of this camera. Moving between influence points causes an interpolation between the associated camera. The interpolation can be customized in a graph editor.
 
 \begin{figure}[htbp]
 \centering
@@ -23,20 +22,19 @@ To avoid confusion with traditional keyframing, the keyframes for the camera set
 \label{fig:framingConceptNew}
 \end{figure}
 
-\subsection{Path System}
-The game is based on a path-system created prior to the camera tool. FCT is dependent on how this system works for both the interface of our system and the calculations.
+%\subsection{Path System}
+%The game is based on a path-system created prior to the camera tool. FCT is dependent on how this system works for both the interface of our system and the calculations.
 
-The path system consists of connected \textit{path nodes}, these connections being the \textit{paths}. When the player taps the screen, the closest point to that tap on a path is found and the player character moves along the paths to the selected point. The function for finding this point is what we used to snap influence points to the paths. Making a linear search through the paths for framings (as explained in Section \ref{interpolationChapter}) meant the paths had to log what influence points were on it.
+%The path system consists of connected \textit{path nodes}, these connections being the \textit{paths}. When the player taps the screen, the closest point to that tap on a path is found and the player character moves along the paths to the selected point. The function for finding this point is what we used to snap influence points to the paths. Making a linear search through the paths for framings (as explained in Section \ref{interpolationChapter}) meant the paths had to log what influence points were on it.
 
 \subsection{Placing an Influence Point}
-In the current implementation of FCT, new influence points snaps to pre-defined path segments, which are connections between path nodes. Each path segment keeps a list of associated influence points.
-
+In the current implementation of FCT, new influence points snap to pre-defined path segments, which are connections between path nodes. Each path segment keeps a list of associated influence points.
 
 Influence points are represented by small diamond-shaped icons (see Figure \ref{fig:placingInfluencePoint}). The connection between an influence point and a camera is indicated by a small line (see Figure \ref{fig:placingInfluencePoint}). However, the influence point and the camera can be moved and adjust independently.
 
 %After a path has been defined, framings can be placed along this path using the mouse. To indicate that an influence point is going to be created, a small diamond-shaped icon appears near the cursor (see Figure \ref{fig:placingInfluencePoint}). This point snaps to the path. Since the player can only work on the path, it is impossible to create an influence point outside of the path. When clicking with the mouse on the path, the system creates a framing. The connection between an influence point and camera is indicated by a small line. The influence point and the camera can be moved and adjusted independently.
 
-Creating a framing while having another framing selected connects the two. This connection is needed for manipulating the interpolation. As discovered in Section \ref{findings}, graph editors are an essential part for adjusting the interpolation. This has been implemented using the built-in graph editor in Unity (see Figure \ref{fig:curve}).
+Clicking on the path creates a framing. Creating a framing while having another framing selected connects the two. This connection is needed for manipulating the interpolation. As described in Section \ref{findings}, graph editors are an essential tool for artists to adjust the interpolation between keyframes. This has been implemented using the built-in graph editor in Unity (see Figure \ref{fig:curve}).
 
 \begin{figure}[htbp]
 \centering
