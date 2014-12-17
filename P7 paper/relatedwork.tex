@@ -9,9 +9,11 @@
 \label{fig:InterpolationExample}
 \end{figure*}
 
-Research has been conducted in the field of automatic camera movements in virtual environments. In 3D computer animation, an virtual environment (containing elements such as lights, objects and buildings), are rendered in frames from a specific point of view. This is a complex process that involves technical and artistic tasks, typically requiring the work of several professionals for a long time period \cite{burelli_automatic_2014}. Developing a system that makes the camera animation automatic can be beneficial at both a professional level (to reduce cost) or at an amateur level (to increase quality). Systems that emphasize automatic behaviour have been implemented \cite{bourne_constraintBased_2008, burelli_automatic_2014}; these use an automatic approach for controlling a virtual camera driven by an intelligent approach. The focus for the Framing-Based Camera Tool is mostly on the artistic elements. Therefore, it is important that the artists are able to create the framings themselves. Hence, an automatic approach is not feasible.
+Automatic camera movements is an active research field. In 3D computer animation, a virtual environment is rendered in frames from a specific point of view. This is a complex process that involves technical and artistic tasks, typically requiring the work of several professionals for a long time period \cite{burelli_automatic_2014}. Developing a system that makes the camera animation automatic can be beneficial at both a professional level (to reduce cost) or at an amateur level (to increase quality). Systems that emphasize automatic behaviour have been proposed \cite{bourne_constraintBased_2008, burelli_automatic_2014}; these use an automatic approach for controlling a virtual camera driven by AI techniques. However, the focus of the camera tool proposed in this work is on artistic control. Therefore, it is important that the artists are able to create framings themselves. Hence, an automatic approach is not feasible.
 
-The main requirements of a camera tool in most games is that it can go from one camera setting  (A) to another camera setting (B), depending on player position or certain events. For instance, A and B can be different in position, rotation and field of view.
+In a behind-the-scenes documentary, the developers behind the PlayStation game series \textit{God of War}, talk about the importance of being able to frame the scene \cite{gow_camera}. Depending on the context, it is important for them to frame the scene, so players know where they should be heading next. They use camera zones to determine what area the player is in and then activate the corresponding camera for that zone.
+
+The main requirements of a framing-based camera tool for games is that it can go from one camera setting (A) to another camera setting (B) depending on the player's position or certain events. For instance, A and B can be different in position, rotation and field of view.
 %By looking at games with emphasis on its visuals and environments, it was found that the camera changes its position, rotation and field of view. 
 Figure \ref{fig:InterpolationExample} shows an example of how the camera interpolates between three positions.
 
@@ -22,8 +24,8 @@ Figure \ref{fig:InterpolationExample} shows an example of how the camera interpo
 %\label{fig:CameraSystem_BASIC}
 %\end{figure}
 
-\subsection{Camera Tools}
-The tool Camera Path Animator 3.0 \cite{unity_camTool} can be used for creating animated cameras within Unity. As the name suggests, it works by animating the camera along a specified path, which can have various shapes (e.g., Bezier and Hermite curves). The tool is primarily targeted towards creating cameras that move linearly along a set path, i.e. for use in cinematic sequences. It provides various ways of inserting, moving and deleting points, as well as changing settings such as field of view, speed, interpolation type and easing. Additionally, it has an event system for triggering certain events at certain points in the path.
+%\subsection{Camera Tools}
+The tool Camera Path Animator \cite{unity_camTool} can be used for creating animated cameras within Unity. As the name suggests, it works by animating the camera along a specified path, which can have various shapes (e.g., Bezier and Hermite curves). The tool is primarily targeted towards creating cameras that move linearly along a set path, i.e. for use in cinematic sequences. It provides various ways of inserting, moving and deleting points, as well as changing settings such as field of view, speed, interpolation type and easing. Additionally, it has an event system for triggering certain events at certain points in the path.
 
 %\begin{figure}[htbp]
 %\centering
@@ -41,8 +43,6 @@ The tool Camera Path Animator 3.0 \cite{unity_camTool} can be used for creating 
 %\lab%el{fig:gow_zones}
 %\end{figure}
 
-In a behind-the-scenes documentary, the developers behind the PlayStation game series \textit{God of War}, talk about the importance of being able to frame the scene \cite{gow_camera}. Depending on the context, it is important for them to frame the scene, so players know where they should be heading next. They use camera zones to determine what area the player is in and then activate the corresponding camera for that zone.
-
 %\begin{figure}[htbp]
 %\centering
 %\includegraphics[width=0.40\textwidth]{Pics/gow_next}
@@ -57,7 +57,7 @@ In a behind-the-scenes documentary, the developers behind the PlayStation game s
 
 %\textbf{Scientific material: Write about automatic camera tools (Paulo something-something) - even though we are not using it. Make it clear that our work is different from how other people's camera tools work}
 
-\subsection{Participatory Design}
-Participatory design has been defined as the participation of users in the design process of a system that is to be implemented in an organization \cite{kensing_participatory_1998}. Here, users correspond to workers in the organization. By involving users in the design, their skills, experiences, and interests are taken into consideration, thereby increasing the likelihood that the system will be useful to them.
+%\subsection{Participatory Design}
+Participatory design has been defined as the participation of users in the design process of a system that is to be implemented in an organization \cite{kensing_participatory_1998}. By involving users in the design, their skills, experiences, and interests are taken into consideration, thereby increasing the likelihood that the system will be useful to them.
 
 According to participatory design researchers, it is important that there is an active cooperation between the designer and the user \cite{kensing_participatory_1998}. This results in the designer gaining knowledge of the user's current work practices, and the user gaining knowledge of the technology being developed. It is also important that users take an active part in the analysis of needs, selection of technology, design and prototyping, as well as organizational implementation.
