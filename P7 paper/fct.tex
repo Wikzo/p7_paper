@@ -20,9 +20,9 @@ To avoid confusion with traditional keyframing, ours have been dubbed \textit{fr
 \subsection{Path System}
 The game is based on a path-system created prior to the camera tool. FCT is dependent on how this system works for both the interface of our system and the calculations.
 
-The path system consists of connected \textit{path nodes}, these connections being the \textit{paths}. When the player taps the screen, the closest point to that tap on a path is found and the player character moves along the paths to the selected point. The function for finding this point is what we used to snap influence points to the paths. Making a linear search through the paths for framings (as explained in Section \ref{interpolationChapter}) meant the paths had to log what influence points were on it.
+The path system consists of connected \textit{path nodes}, these connections being the \textit{paths}. When the player taps the screen, the closest point to that tap on a path is found and the player character moves along the paths to the selected point. The function for finding this point is what we used to snap influence points to the paths (Section \ref{placingInf}). Making a linear search through the paths for framings (as explained in Section \ref{interpolationChapter}) meant the paths had to log what influence points were on it.
 
-\subsection{Placing an Influence Point}
+\subsection{Placing an Influence Point} \label{placingInf}
 After a path has been defined, framings can be placed along this path using the mouse. To indicate that an influence point is going to be created, a small diamond-shaped icon appears near the cursor (see Figure \ref{fig:placingInfluencePoint}). This point snaps to the path. Since the player can only work on the path, it is impossible to create an influence point outside of the path. When clicking with the mouse on the path, the system creates a framing. The connection between an influence point and camera is indicated by a small line. The influence point and the camera can be moved and adjusted independently.
 
 Creating a framing while having another framing selected connects the two. This connection is needed for manipulating the interpolation. The interpolation can be adjusted using the built-in graph editor in Unity (see Figure \ref{fig:curve}).
